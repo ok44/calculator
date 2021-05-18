@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<body>
+    <h1>Calculator</h1>
+    <h2 id='screen'> ########</h2>
+    <button>0</button>
+    <button>1</button>
+    <button>2</button>
+    <button>3</button>
+    <button>4</button>
+    <button>5</button>
+    <button>6</button>
+    <button>7</button>
+    <button>8</button>
+    <button>9</button>
+    <button id='equals'>=</button>
+    <button id ='clear'>CLEAR</button>
+    <button id='add'>+</button>
+    <button id='subtract'>-</button>
+    <button id='mutliply'>×</button>
+    <button id='divide'>÷</button>
+
+</body>
+<script>
+    let display = ''
+    let screen = document.querySelector('#screen')
+    let runningAnswer;
+    let typed = []
+
+    function add(n1,n2) {
+        return n1+n2
+    }
+    function substract(n1,n2) {
+        return n1-n2
+    }
+    function multiply(n1,n2) {
+        return n1*n2
+    }
+    function divide(n1,n2) {
+        return n1/n2
+    }
+    function operator(n1, sign, n2) { 
+        return sign(n1,n2)
+    }
+
+    const buttons = document.querySelectorAll('button')
+
+    // adds listeners to buttons
+    for (let i = 0; i < 16; i++) {
+        buttons[i].addEventListener('click', function() {
+            let started = true;
+            display += buttons[i].innerHTML
+            screen.innerHTML = display 
+        })
+    }
+
+</script>
+</html>
